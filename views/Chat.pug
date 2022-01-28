@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#12192C">
+    <title>Check-it!</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" href="/css/styles.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../public/CHECK-IT!logo.png">
+    
+    
+</head>
+<body class="body-pd">
+    
+        
+    </div>
+
+    <div class="w-navbar">
+
+        <nav class="topnav">
+
+            
+                <div class="logo">
+                    <a href="/course/MyCourse"><img src="/CHECK-IT logo.png" alt="CHECK-IT"></a>
+                </div>
+
+                <div class="nav__listtop">
+
+                    //<a href="#" class="nav__top">
+                    //<ion-icon name="add-outline" onclick="CourseFunction()" class="dropbtnCourse"></ion-icon>
+                    //</a>
+                    //<div id="DropdownCourse" class="dropdownCourse-content">
+                        <a href="#">Join Course</a>
+                        <a href="#">Create Course</a>
+                    //</div>
+                    
+                    <a href="/user/profile" class="nav__top">
+                    <ion-icon name="person-circle" onclick="ProfileFunction()" class="" href="profile"></ion-icon>
+                    </a>
+
+                </div>
+
+            
+            
+        </nav>
+    </div>
+    
+    
+    <div class="l-navbar" id="navbar">
+        
+        <nav class="nav">
+            <div>
+
+
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="#" class="nav__logo">Check-IT!</a>
+                </div>
+                <div class="nav__list">
+                    //<a href="/home" class="nav__link">
+                    //<ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Dashboard</span>
+                    //</a>
+
+                    //<a href="/Chat" class="nav__link active">
+                    //<ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Chat</span>
+                    //</a>
+
+                    <a href="/course/MyCourse" class="nav__link collapse">
+                    <ion-icon name="school-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">My Course</span>
+                    </a>
+
+                    //<a href="/Notes" class="nav__link">
+                    //<ion-icon name="pencil-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Notes</span>
+                    //</a>
+
+                    //<a href="/StudyPlan" class="nav__link">
+                    //<ion-icon name="book-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Study Plan</span>
+                    //</a>
+
+                    <a href="/ToDoList" class="nav__link">
+                    <ion-icon name="clipboard-outline" class="nav__icon" ></ion-icon>
+                    <span class="nav__name">To-Do List</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/user/logout" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav__name">Log Out</span>
+                </a>
+            
+        </nav>
+
+    </div>
+
+
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    
+    <header class="rounded bg-white shadow p-4 mx-4 my-2" >
+        <h1 class="text-2xl font-bold" >#{course.name}</h1>
+        <p class="text-lg font-medium">Chat</p>
+    </header>
+    <div class="bg-white shadow rounded p-4 mx-4 my-2">
+    <section id="chat" class="mx-4 mb-20"></section>
+    <section class=" bottom-3 w-full flex" >
+        <input class="rounded border border-gray-900 p-1 mx-1 md:mx-2 w-4 flex-1" type="text" name="message" id="message">
+        <button id="send-btn" class="flex-none md:mr-2" ><span class="material-icons text-lg ml-1 text-blue-700" >send</span></button>
+    </section>
+    </div>
+    <input type="hidden" value="#{user.id}" id="userid">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="/chat.js"></script>
+    
+      
+    <script src="/ui.js"></script>
+
+    
+    
+</body>
+</html>

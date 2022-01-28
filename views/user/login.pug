@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#12192C">
+    <title>Check-IT!</title>
+    <link rel="stylesheet" href="/css/loginstyle.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../public/CHECK-IT!logo.png">
+
+  </head>
+  <body>
+    <div class="center">
+      <h2>Login</h2>
+      <form method="post" action="/user/login">
+        <div class="txt_field">
+          <input name="email" type="text" required>
+          <span></span>
+          <label>Email</label>
+          if emailError 
+                    <p class="text-red-600 text-sm" >#{emailError}</p>
+        </div>
+        <div class="txt_field">
+          <input name="password" type="password" required>
+          <span></span>
+          <label>Password</label>
+          if passwordError 
+                    <p class="text-red-600 text-md" >#{passwordError}</p>
+        </div>
+        //<div class="pass">Forgot Password?</div>
+        <input type="submit" value="Login">
+        <div class="signup_link"> Not sign up yet? <a href="/user/register">Signup</a>
+        </div>
+            
+        
+      </form>
+    </div>
+
+  
+    <script src="/ui.js"></script>
+
+  </body>
+</html>

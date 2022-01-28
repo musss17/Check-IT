@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#12192C">
+    <title>Check-IT!</title>
+    <link rel="stylesheet" href="/css/loginstyle.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../public/CHECK-IT!logo.png">
+
+
+  </head>
+  <body>
+    <div class="center">
+      <h1>Register</h1>
+      <form method="post" action="/user/register">
+        
+        <div class="txt_field">
+          <input name="name" type="text" required>
+          <span></span>
+          <label>Name</label>
+        </div>
+        <label class="block" for="gender">Gender</label>
+        <div class="select-style" >
+                <select class="rounded border border-gray-900 p-1 w-full" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+        </div>
+        <div class="txt_field">
+          <input name="email" type="email" required>
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+          <input name="age" type="number" required>
+          <span></span>
+          <label>Age</label>
+        </div>
+        <div class="txt_field">
+          <input name="phone" type="phone" required>
+          <span></span>
+          <label>Phone Number</label>
+        </div>
+        <div class="txt_field">
+          <input name="password" type="password" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+
+        
+            <input type="submit" value="Register">
+            <div class="signup_link"> Already have an account? <a href="/user/login">Login</a>
+            </div>
+            
+        
+      </form>
+    </div>
+
+    <script src="/ui.js"></script>
+
+  </body>
+</html>

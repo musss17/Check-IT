@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#12192C">
+    <title>Check-it!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link type="text/css" href="/css/styles.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../public/CHECK-IT!logo.png">
+    
+    
+</head>
+<body class="body-pd">
+    
+        
+    </div>
+
+    <div class="w-navbar">
+
+        <nav class="topnav">
+
+            
+                <div class="logo">
+                    <a href="/course/MyCourse"><img src="/CHECK-IT logo.png" alt="CHECK-IT"></a>
+                </div>
+
+                <div class="nav__listtop">
+
+                    //<a href="#" class="nav__top">
+                    //<ion-icon name="add-outline" onclick="CourseFunction()" class="dropbtnCourse"></ion-icon>
+                    //</a>
+                    //<div id="DropdownCourse" class="dropdownCourse-content">
+                        <a href="#">Join Course</a>
+                        <a href="#">Create Course</a>
+                    //</div>
+                    
+                    <a href="/user/profile" class="nav__top">
+                    <ion-icon name="person-circle" onclick="ProfileFunction()" class="" href="profile"></ion-icon>
+                    </a>
+
+                </div>
+
+            
+            
+        </nav>
+    </div>
+    
+    
+    <div class="l-navbar" id="navbar">
+        
+        <nav class="nav">
+            <div>
+
+
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="#" class="nav__logo">Check-IT!</a>
+                </div>
+                <div class="nav__list">
+                    //<a href="/home" class="nav__link">
+                    //<ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Dashboard</span>
+                    //</a>
+
+                    //<a href="/Chat" class="nav__link">
+                    //<ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Chat</span>
+                    //</a>
+
+                    <a href="/course/MyCourse" class="nav__link">
+                    <ion-icon name="school-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">My Course</span>
+                    </a>
+
+                    //<a href="/Notes" class="nav__link">
+                    //<ion-icon name="pencil-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Notes</span>
+                    //</a>
+
+                    //<a href="/StudyPlan" class="nav__link">
+                    //<ion-icon name="book-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Study Plan</span>
+                    //</a>
+
+                    <a href="/ToDoList" class="nav__link">
+                    <ion-icon name="clipboard-outline" class="nav__icon" ></ion-icon>
+                    <span class="nav__name">To-Do List</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/user/logout" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav__name">Log Out</span>
+                </a>
+            
+        </nav>
+
+    </div>
+
+    <header class="p-4" >
+        <h1 class="text-3xl font-semibold" >Course</h1>
+    </header>
+
+    <section class="px-4 mb-6">
+        <div class="flex justify-between mb-2" >
+            <p class="text-xl font-semibold">My Course</p>
+            <a class="flex justify-center items-center hover:bg-blue-600 py-1 bg-gray-900 text-white rounded w-24"  href="/course/create">
+                <span class="material-icons text-base" >add</span>
+                <p>Create</p>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 md:grid-cols-3">
+            if myCourses.length == 0
+                <p>You don't have any course yet.</p>
+            each course in myCourses
+                <a class="border rounded shadow p-2 bg-white hover:shadow-xl hover:bg-gray-200" href="/course/view/#{course._id}" >
+                    <p class="font-semibold" >#{course.name}</p>
+                    <p>Code: #{course._id}</p>
+                </a>
+        </div>
+    </section>
+    <hr class="border bg-gray-900 mx-4 mb-4" >
+    <section class="px-4">
+        <div class="flex justify-between mb-2" >
+            <p class="text-xl font-semibold">Enrollments</p>
+            <a class="flex justify-center items-center hover:bg-blue-600 py-1 bg-gray-900 text-white rounded w-24"  href="/course/join">
+                <span class="material-icons text-base" >add</span>
+                <p>Join</p>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 md:grid-cols-3">
+            if enrollments.length == 0
+                <p>You are not enrolled in any course.</p>
+            each course in enrollments
+                <a class="border rounded shadow p-2 bg-white hover:shadow-xl hover:bg-gray-300" href="/course/view/#{course.courseId}" >
+                    <p class="font-semibold" >#{course.courseName}</p>
+                    <p>Instructor: #{course.instructor}</p>
+                </a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+      
+    <script src="/__/firebase/8.6.7/firebase-app.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-auth.js"></script>
+
+    <script src="/__/firebase/init.js"></script>
+    <script src="/ui.js"></script>
+    
+</body>
+</html>

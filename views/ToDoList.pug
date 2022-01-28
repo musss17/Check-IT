@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#12192C">
+    <title>Check-it!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" href="/css/todoliststyles.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../public/CHECK-IT!logo.png">
+    
+    
+</head>
+<body class="body-pd">
+    
+        
+    </div>
+
+    <div class="w-navbar">
+
+        <nav class="topnav">
+
+            
+                <div class="logo">
+                    <a href="/course/MyCourse"><img src="CHECK-IT logo.png" alt="CHECK-IT"></a>
+                </div>
+
+                <div class="nav__listtop">
+
+                    //<a href="#" class="nav__top">
+                    //<ion-icon name="add-outline" onclick="CourseFunction()" class="dropbtnCourse"></ion-icon>
+                    //</a>
+                    //<div id="DropdownCourse" class="dropdownCourse-content">
+                        <a href="#">Join Course</a>
+                        <a href="#">Create Course</a>
+                    //</div>
+                    
+                    <a href="/user/profile" class="nav__top">
+                    <ion-icon name="person-circle" onclick="ProfileFunction()" class="" href="profile"></ion-icon>
+                    </a>
+
+                </div>
+
+            
+            
+        </nav>
+    </div>
+    
+    
+    <div class="l-navbar" id="navbar">
+        
+        <nav class="nav">
+            <div>
+
+
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="#" class="nav__logo">Check-IT!</a>
+                </div>
+                <div class="nav__list">
+                    //<a href="/home" class="nav__link">
+                    //<ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Dashboard</span>
+                    //</a>
+
+                    //<a href="/Chat" class="nav__link">
+                    //<ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Chat</span>
+                    //</a>
+
+                    <a href="/course/MyCourse" class="nav__link collapse">
+                    <ion-icon name="school-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">My Course</span>
+                    </a>
+
+                    //<a href="/Notes" class="nav__link">
+                    //<ion-icon name="pencil-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Notes</span>
+                    //</a>
+
+                    //<a href="/StudyPlan" class="nav__link">
+                    //<ion-icon name="book-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Study Plan</span>
+                    //</a>
+
+                    <a href="/ToDoList" class="nav__link active">
+                    <ion-icon name="clipboard-outline" class="nav__icon" ></ion-icon>
+                    <span class="nav__name">To-Do List</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/user/logout" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav__name">Log Out</span>
+                </a>
+            
+        </nav>
+
+    </div>
+
+    <h1>To Do List</h1>
+    <div class="box">
+        <div class="all-tasks">
+        <h2 class="task-list-title">My lists</h2>
+        <ul class="task-list" data-lists></ul>
+
+        <form action="" data-new-list-form>
+            <input type="text" class="new list" data-new-list-input placeholder="new list name" aria-label="new list name">
+            <button class="btn create" aria-label="create new list">+</button>
+        </form>
+        </div>
+
+        <div class="todo-list" data-list-display-container>
+        <div class="todo-header">
+            <h2 class="list-title" data-list-title>Things To Do</h2>
+            <p class="task-count" data-list-count>0 task(s) remaining</p>
+        </div>
+
+    <div class="todo-body">
+        <div class="tasks" data-tasks></div>
+
+        <div class="new-task-creator">
+            <form action="" data-new-task-form>
+                <input type="text" data-new-task-input class="new task" placeholder="new task name" aria-label="new task name"/>
+                <button class="btn create" aria-label="create new task">+</button>
+            </form>
+        </div>
+
+        <div class="delete-stuff">
+        <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+        <button class="btn delete" data-delete-list-button>Delete list</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+    <template id="task-template">
+    <div class="task">
+        <input type="checkbox" />
+        <label>
+        <span class="custom-checkbox"></span>
+        </label>
+    </div>
+    </template>
+
+    <!-- The link below is for the js file without using class  -->
+    <script src="with_class.js"></script>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    
+    <script src="/__/firebase/8.6.7/firebase-app.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-auth.js"></script>
+
+    <script src="/__/firebase/init.js"></script>
+    <script src="/ui.js"></script>
+    
+</body>
+</html>

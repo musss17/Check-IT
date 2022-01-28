@@ -1,0 +1,16 @@
+{
+    "name": "Check-IT!",
+    "short_name": "Check-IT!",
+    "start_url": ".",
+    "background_color": "#B6CEFC",
+    "theme_color": "#12192C",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "CHECK-IT!logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

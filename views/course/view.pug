@@ -1,0 +1,178 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#12192C">
+    <title>Check-it!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link type="text/css" href="/css/styles.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../public/CHECK-IT!logo.png">
+    
+    
+</head>
+<body class="body-pd">
+    
+        
+    </div>
+
+    <div class="w-navbar">
+
+        <nav class="topnav">
+
+            
+                <div class="logo">
+                    <a href="/course/MyCourse"><img src="/CHECK-IT logo.png" alt="CHECK-IT"></a>
+                </div>
+
+                <div class="nav__listtop">
+
+                    //<a href="#" class="nav__top">
+                    //<ion-icon name="add-outline" onclick="CourseFunction()" class="dropbtnCourse"></ion-icon>
+                    //</a>
+                    //<div id="DropdownCourse" class="dropdownCourse-content">
+                        <a href="#">Join Course</a>
+                        <a href="#">Create Course</a>
+                    //</div>
+                    
+                    <a href="/user/profile" class="nav__top">
+                    <ion-icon name="person-circle" onclick="ProfileFunction()" class="" href="profile"></ion-icon>
+                    </a>
+
+                </div>
+
+            
+            
+        </nav>
+    </div>
+    
+    
+    <div class="l-navbar" id="navbar">
+        
+        <nav class="nav">
+            <div>
+
+
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="#" class="nav__logo">Check-IT!</a>
+                </div>
+                <div class="nav__list">
+                    //<a href="/home" class="nav__link">
+                    //<ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Dashboard</span>
+                    //</a>
+
+                    //<a href="/Chat" class="nav__link">
+                    //<ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Chat</span>
+                    //</a>
+
+                    <a href="/course/MyCourse" class="nav__link collapse">
+                    <ion-icon name="school-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">My Course</span>
+                    </a>
+
+                    //<a href="/Notes" class="nav__link">
+                    //<ion-icon name="pencil-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Notes</span>
+                    //</a>
+
+                    //<a href="/StudyPlan" class="nav__link">
+                    //<ion-icon name="book-outline" class="nav__icon"></ion-icon>
+                    //<span class="nav__name">Study Plan</span>
+                    //</a>
+
+                    <a href="/ToDoList" class="nav__link">
+                    <ion-icon name="clipboard-outline" class="nav__icon" ></ion-icon>
+                    <span class="nav__name">To-Do List</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/user/logout" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav__name">Log Out</span>
+                </a>
+            
+        </nav>
+
+    </div>
+
+    <section></section>
+    <header class="rounded bg-white shadow p-4 mx-4 my-2" >
+        <h1 class="text-2xl font-bold" >#{course.name}</h1>
+        <p>#{course.description}</p>
+        <p class="font-semibold mt-3">Class code</p>
+        <p>#{course._id}</p>
+        <p class="font-semibold mt-2">Instructor</p>
+        <p >#{instructor.name}</p>
+        <a class="bg-gray-900 text-white px-4 py-1 mt-3 inline-block hover:bg-gray-500 rounded" href="/Chat/index/#{course._id}">Chat</a>
+        if course.userId == user.id
+            <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 mt-3" >
+                <a class="flex border-2 items-center justify-center text-blue-500 hover:bg-gray-300 rounded px-3" href="/course/students/#{course._id}">
+                    <span class="material-icons text-xl mr-2" >groups</span>
+                    <p>View students</p>
+                </a>
+                <a class="flex border-2 items-center justify-center text-blue-500 hover:bg-gray-300 rounded px-3" href="/course/update/#{course._id}">
+                    <span class="material-icons text-lg mr-2" >edit</span>
+                    <p>Edit</p>
+                </a>
+                //- <a class="flex border-2 items-center justify-center text-blue-500 hover:bg-gray-300 rounded px-3" href="/course/remove/#{course._id}">
+                //-     <span class="material-icons text-lg mr-2" >delete</span>
+                //-     <p>Remove</p>
+                //- </a>
+            </div>
+    </header>
+    <section class="mx-4" >
+        <div class="flex items-center mb-3 mt-4" >
+            <h1 class="font-semibold text-xl pb-1" >Posts</h1>
+            if isTeacher
+                <a class="flex justify-center items-center text-blue-600 hover:bg-gray-300 rounded px-3 ml-3"  href="/course/post/create/#{course._id}">
+                    <span class="material-icons py-1 text-md font-bold" >add</span>
+                    <p class="" >Add</p>
+                </a>
+        </div>
+    </section>
+    <section>
+        if posts.length == 0
+            <p class="mx-4" >No post yet.</p>
+        each post in posts
+            <div class="border shadow mx-4 rounded bg-white px-4 py-3 mb-3" >
+                <p class="text-xl font-semibold" >#{post.title}</p>
+                <p class="mb-2" >#{post.body}</p>
+                if post.attachment.category == 'url'
+                    <a class="text-blue-600" href="#{post.attachment.content}">#{post.attachment.content}</a>
+                if post.attachment.category == 'pdf'
+                    <a class="flex w-min items-center border border-gray-500 rounded p-2 hover:bg-gray-400" href="#{post.attachment.content}" target="_blank" >
+                        <span class="material-icons text-red-500 mr-2" >picture_as_pdf</span>
+                        <p>#{post.attachment.label}</p>
+                    </a>
+                if post.attachment.category == 'image'
+                    <a class="flex flex-col w-min items-center border border-gray-500 rounded p-2 hover:bg-gray-400" href="#{post.attachment.content}" target="_blank" >
+                        <img class="w-full h-24 object-cover" src="#{post.attachment.content}" alt="image attachment">
+                        <p>#{post.attachment.label}</p>
+                    </a>
+                <div class="flex justify-between mt-2" >
+                    <span class="text-sm" >#{post.updatedAt}</span>
+                    if user.id == post.userId
+                        <div class="flex" >
+                            <a class="flex items-center text-blue-500 hover:bg-gray-300 rounded px-2" href="/course/post/update/#{post._id}"><span class="material-icons text-lg" >edit</span></a>
+                            <a class="flex items-center text-blue-500 hover:bg-gray-300 rounded px-2" href="/course/post/remove/#{post._id}"><span class="material-icons text-lg" >delete</span></a>
+                        </div>
+                </div>
+            </div>
+    </section>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+      
+    <script src="/__/firebase/8.6.7/firebase-app.js"></script>
+    <script src="/__/firebase/8.6.7/firebase-auth.js"></script>
+
+    <script src="/__/firebase/init.js"></script>
+    <script src="/ui.js"></script>
+    
+</body>
+</html>
